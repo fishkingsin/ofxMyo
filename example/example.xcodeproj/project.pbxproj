@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AAACC8719F7598400D9B6A5 /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAACC8619F7598400D9B6A5 /* myo.framework */; };
-		1AAACC8919F75B3E00D9B6A5 /* myo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1AAACC8619F7598400D9B6A5 /* myo.framework */; };
+		1A6362731AE614E30002D635 /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6362721AE614E30002D635 /* myo.framework */; };
+		1A6362A91AE624AA0002D635 /* myo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A6362721AE614E30002D635 /* myo.framework */; };
 		ADF4E14A444FC04571F65373 /* ofxMyo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC3B597679CEA4C0102EC16 /* ofxMyo.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
@@ -56,7 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				1AAACC8919F75B3E00D9B6A5 /* myo.framework in CopyFiles */,
+				1A6362A91AE624AA0002D635 /* myo.framework in CopyFiles */,
 				BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,7 +65,7 @@
 
 /* Begin PBXFileReference section */
 		026B02936D2F7F1250DE5E58 /* myo.framework */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = wrapper.framework; name = myo.framework; path = ../../../addons/ofxMyo/libs/myo.framework; sourceTree = "<group>"; };
-		1AAACC8619F7598400D9B6A5 /* myo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = myo.framework; sourceTree = "<group>"; };
+		1A6362721AE614E30002D635 /* myo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = myo.framework; sourceTree = "<group>"; };
 		225B5A98AD5518F293976F4D /* ofxMyoDefines.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMyoDefines.h; path = ../../../addons/ofxMyo/src/ofxMyoDefines.h; sourceTree = SOURCE_ROOT; };
 		5C53622BF68729B7B6A23F4B /* ofxMyo.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMyo.h; path = ../../../addons/ofxMyo/src/ofxMyo.h; sourceTree = SOURCE_ROOT; };
 		8E7C8930FE4C9A8A6B778687 /* MyoDataCollector.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = MyoDataCollector.h; path = ../../../addons/ofxMyo/src/helper/MyoDataCollector.h; sourceTree = SOURCE_ROOT; };
@@ -110,7 +110,7 @@
 				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
 				E45BE97F0E8CC7DD009D7055 /* CoreAudio.framework in Frameworks */,
 				E45BE9800E8CC7DD009D7055 /* CoreFoundation.framework in Frameworks */,
-				1AAACC8719F7598400D9B6A5 /* myo.framework in Frameworks */,
+				1A6362731AE614E30002D635 /* myo.framework in Frameworks */,
 				E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */,
 				E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */,
 				E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */,
@@ -136,7 +136,7 @@
 		1AAACC8519F7598400D9B6A5 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				1AAACC8619F7598400D9B6A5 /* myo.framework */,
+				1A6362721AE614E30002D635 /* myo.framework */,
 			);
 			name = libs;
 			path = ../libs;
@@ -359,6 +359,7 @@
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
@@ -423,6 +424,7 @@
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -491,7 +493,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					/Users/james/Development/of_v0.8.3_osx_release/addons/ofxMyo/libs,
+					"$(OF_PATH)/addons/ofxMyo/libs",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -578,7 +580,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					/Users/james/Development/of_v0.8.3_osx_release/addons/ofxMyo/libs,
+					"$(OF_PATH)/addons/ofxMyo/libs",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;

@@ -3,6 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     m_myo.setup();
+
 }
 
 //--------------------------------------------------------------
@@ -10,7 +11,7 @@ void ofApp::update(){
     m_myo.update();
     m_myo.printDebug();
     MyoFrameOrientationData orientationData = m_myo.getCurrFrameOrientionData();
-    
+
     roll.push_back(orientationData.euler_roll);
 	pitch.push_back(orientationData.euler_pitch);
 	yaw.push_back(orientationData.euler_yaw);
@@ -31,8 +32,9 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    float half_H = ofGetHeight()*0.5;
-    float maxH = ofGetHeight()*0.25;
+    float maxH = 20;
+    float half_H = ofGetHeight()*0.5-(maxH*0.5);
+
     ofPushStyle();
     ofSetHexColor(0x101010);
     for(unsigned int i=1;i<pitch.size();i++){

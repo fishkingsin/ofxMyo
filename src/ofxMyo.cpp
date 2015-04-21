@@ -13,15 +13,17 @@ void ofxMyo::setup()
 {
 	try
 	{
-		m_hub = new myo::Hub;
+//        myo::Hub hub("cc.openframeworks.ofxMyo");
+		m_hub = new myo::Hub("cc.openframeworks.ofxMyo");
 
 		std::cout << "Attempting to find a Myo..." << std::endl;
 
 		// Next, we try to find a Myo (any Myo) that's nearby and connect to it. waitForAnyMyo() takes a timeout
 		// value in milliseconds. In this case we will try to find a Myo for 10 seconds, and if that fails, the function
 		// will return a null pointer.
-		const int wait_num_ms = 10000;
-		myo::Myo* myo = m_hub->waitForMyo(wait_num_ms);
+
+        
+        myo::Myo* myo = m_hub->waitForMyo(10000);
 
 		// If waitForAnyMyo() returned a null pointer, we failed to find a Myo, so exit with an error message.
 		if (!myo) 
@@ -65,18 +67,20 @@ void ofxMyo::printDebug()
 {
 	if ( m_hub )
 	{
-		m_collector.printDebug();
+		m_collector.print();
 	}
 }
 
 
 void ofxMyo::release()
 {
-	if ( m_hub ) 
+	if ( m_hub != NULL)
 	{
-		delete m_hub;
+        m_hub->~Hub();
 		m_hub = NULL;
 	}
+    m_collector.~MyoDataCollector();
+    
 }
 
 MyoFrameOrientationData ofxMyo::getCurrFrameOrientionData() const
